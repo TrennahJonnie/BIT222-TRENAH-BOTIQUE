@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Boutique</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: yellow; /* Set background color of the website to yellow */
+            display: flex;
+            flex-direction: column; /* Align content vertically */
+            height: 100vh; /* Set height of body to viewport height */
+        }
+
+        header {
+            background: linear-gradient(to bottom, #000, #222); /* Set navigation bar color from top to bottom */
+            color: #fff;
+            padding: 20px;
+            width: 100%; /* Set navigation bar width to 100% */
+            text-align: center; /* Center align text */
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline; /* Display navigation links inline */
+            margin-right: 10px; /* Add spacing between navigation links */
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            color: #333;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            margin-top: auto; /* Push footer to bottom */
+        }
+
+        form {
+            padding: 20px;
+        }
+
+        input[type="submit"] {
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Clothing Boutique</h1>
+        <nav>
+            <ul>
+                <li><a href="#home" onclick="showContent('home')">Home</a></li>
+                <li><a href="#about" onclick="showContent('about')">About Us</a></li>
+                <li><a href="#services" onclick="showContent('services')">Services</a></li>
+                <li><a href="#contact" onclick="showContent('contact')">Contact Us</a></li>
+                <li><a href="#order" onclick="showContent('order')">Order Online</a></li>
+                <li><a href="#create-account" onclick="showContent('create-account')">Create Account</a></li>
+                <li><a href="#login" onclick="showContent('login')">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Home</h2>
+            <p>Welcome to our clothing boutique! We offer a wide range of trendy clothes for all occasions.</p>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Our clothing boutique is dedicated to providing high-quality fashion items at affordable prices. With a focus on customer satisfaction, we strive to offer the latest trends and styles.</p>
+        </section>
+
+        <section id="services">
+            <h2>Services</h2>
+            <ul>
+                <li>Personal styling consultations</li>
+                <li>Clothing alterations</li>
+                <li>Special orders</li>
+                <li>Online ordering and delivery</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: johntrenaokumu@gmail.com</p>
+            <p>Phone: 0768713187</p>
+        </section>
+
+        <form id="order">
+            <h2>Order Online</h2>
+            <label for="product">Product:</label>
+            <input type="text" id="product" name="product" placeholder="Enter product name">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" placeholder="Enter quantity">
+            <input type="submit" value="Order Now">
+        </form>
+
+        <section id="create-account">
+            <h2>Create Account</h2>
+            <form id="createAccountForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter a strong password" required>
+                <input type="submit" value="Create Account">
+            </form>
+        </section>
+
+        <section id="login">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" name="loginEmail" placeholder="Enter your email" required>
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" name="loginPassword" placeholder="Enter your password" required>
+                <input type="submit" value="Login">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Clothing Boutique. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showContent(sectionId) {
+            var sections = document.querySelectorAll('section');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = 'none';
+            }
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        document.getElementById("createAccountForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            // Dummy email and password validation
+            if (email && password) {
+                alert("Account created successfully!");
+            } else {
+                alert("Please provide a valid email and a strong password.");
+            }
+        });
+
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var email = document.getElementById("loginEmail").value;
+            var password = document.getElementById("loginPassword").value;
+
+            // Dummy login authentication
+            if (email && password) {
+                alert("Login successful!");
+            } else {
+                alert("Invalid email or password. Please try again.");
+            }
+        });
+    </script>
+</body>
+</html>
+
